@@ -6,7 +6,7 @@ class CreateRecords < ActiveRecord::Migration
       t.column :photo2_file_name,   :string
       t.column :photo3_file_name,   :string
       t.column :doc_file_name,      :string
-      t.column :comment,            :string
+      t.column :comment,            :text
       t.column :p6_val,   :none
       t.column :p7_val,   :none
       t.column :p8_val,   :none

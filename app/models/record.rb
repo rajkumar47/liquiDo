@@ -9,7 +9,7 @@
 #  photo2_file_name :string(255)
 #  photo3_file_name :string(255)
 #  doc_file_name    :string(255)
-#  comment          :string(255)
+#  comment          :text
 #  p6_val           :
 #  p7_val           :
 #  p8_val           :
