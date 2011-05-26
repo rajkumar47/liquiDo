@@ -13,15 +13,15 @@
 ActiveRecord::Schema.define(:version => 20110526005133) do
 
 # Could not dump table "records" because of following StandardError
-#   Unknown type 'none' for column 'p1_val'
+#   Unknown type 'none' for column 'p6_val'
 
   create_table "sites", :force => true do |t|
     t.string   "name"
-    t.string   "p1_name"
-    t.string   "p2_name"
-    t.string   "p3_name"
-    t.string   "p4_name"
-    t.string   "p5_name"
+    t.string   "i_name"
+    t.string   "i2_name"
+    t.string   "i3_name"
+    t.string   "doc_name"
+    t.string   "comment_name"
     t.string   "p6_name"
     t.string   "p7_name"
     t.string   "p8_name"
