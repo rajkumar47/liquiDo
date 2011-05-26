@@ -1,0 +1,69 @@
+<%= form_for(@record) do |f| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :site_id %><br />
+    <%= f.text_field :site_id %>
+  </div>
+  <div class="field">
+    <%= f.label :p1_val %><br />
+    <%= f.text_field :p1_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p2_val %><br />
+    <%= f.text_field :p2_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p3_val %><br />
+    <%= f.text_field :p3_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p4_val %><br />
+    <%= f.text_field :p4_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p5_val %><br />
+    <%= f.text_field :p5_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p6_val %><br />
+    <%= f.text_field :p6_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p7_val %><br />
+    <%= f.text_field :p7_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p8_val %><br />
+    <%= f.text_field :p8_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p9_val %><br />
+    <%= f.text_field :p9_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p10_val %><br />
+    <%= f.text_field :p10_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p11_val %><br />
+    <%= f.text_field :p11_val %>
+  </div>
+  <div class="field">
+    <%= f.label :p12_val %><br />
+    <%= f.text_field :p12_val %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,69 @@
+<%= form_for(@site) do |f| %>
+  <% if @site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@site.errors.count, "error") %> prohibited this site from being saved:</h2>
+
+      <ul>
+      <% @site.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :p1_name %><br />
+    <%= f.text_field :p1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p2_name %><br />
+    <%= f.text_field :p2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p3_name %><br />
+    <%= f.text_field :p3_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p4_name %><br />
+    <%= f.text_field :p4_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p5_name %><br />
+    <%= f.text_field :p5_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p6_name %><br />
+    <%= f.text_field :p6_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p7_name %><br />
+    <%= f.text_field :p7_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p8_name %><br />
+    <%= f.text_field :p8_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p9_name %><br />
+    <%= f.text_field :p9_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p10_name %><br />
+    <%= f.text_field :p10_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p11_name %><br />
+    <%= f.text_field :p11_name %>
+  </div>
+  <div class="field">
+    <%= f.label :p12_name %><br />
+    <%= f.text_field :p12_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

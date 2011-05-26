@@ -1,0 +1,47 @@
+<h1>Listing records</h1>
+
+<table>
+  <tr>
+    <th>Site</th>
+    <th>P1 val</th>
+    <th>P2 val</th>
+    <th>P3 val</th>
+    <th>P4 val</th>
+    <th>P5 val</th>
+    <th>P6 val</th>
+    <th>P7 val</th>
+    <th>P8 val</th>
+    <th>P9 val</th>
+    <th>P10 val</th>
+    <th>P11 val</th>
+    <th>P12 val</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @records.each do |record| %>
+  <tr>
+    <td><%= record.site_id %></td>
+    <td><%= record.p1_val %></td>
+    <td><%= record.p2_val %></td>
+    <td><%= record.p3_val %></td>
+    <td><%= record.p4_val %></td>
+    <td><%= record.p5_val %></td>
+    <td><%= record.p6_val %></td>
+    <td><%= record.p7_val %></td>
+    <td><%= record.p8_val %></td>
+    <td><%= record.p9_val %></td>
+    <td><%= record.p10_val %></td>
+    <td><%= record.p11_val %></td>
+    <td><%= record.p12_val %></td>
+    <td><%= link_to 'Show', record %></td>
+    <td><%= link_to 'Edit', edit_record_path(record) %></td>
+    <td><%= link_to 'Destroy', record, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Record', new_record_path %>
