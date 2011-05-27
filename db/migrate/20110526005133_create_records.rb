@@ -7,13 +7,13 @@ class CreateRecords < ActiveRecord::Migration
       t.column :photo3_file_name,   :string
       t.column :doc_file_name,      :string
       t.column :comment,            :text
-      t.column :p6_val,   :none
-      t.column :p7_val,   :none
-      t.column :p8_val,   :none
-      t.column :p9_val,   :none
-      t.column :p10_val,  :none
-      t.column :p11_val,  :none
-      t.column :p12_val,  :none
+      t.column :p6,   :none
+      t.column :p7,   :none
+      t.column :p8,   :none
+      t.column :p9,   :none
+      t.column :p10,  :none
+      t.column :p11,  :none
+      t.column :p12,  :none
 
       t.timestamps
     end

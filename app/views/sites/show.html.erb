@@ -1,70 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @site.name %>
-</p>
-
-<p>
-  <b>P1 name:</b>
-  <%= @site.p1_name %>
-</p>
-
-<p>
-  <b>P2 name:</b>
-  <%= @site.p2_name %>
-</p>
-
-<p>
-  <b>P3 name:</b>
-  <%= @site.p3_name %>
-</p>
-
-<p>
-  <b>P4 name:</b>
-  <%= @site.p4_name %>
-</p>
-
-<p>
-  <b>P5 name:</b>
-  <%= @site.p5_name %>
-</p>
-
-<p>
-  <b>P6 name:</b>
-  <%= @site.p6_name %>
-</p>
-
-<p>
-  <b>P7 name:</b>
-  <%= @site.p7_name %>
-</p>
-
-<p>
-  <b>P8 name:</b>
-  <%= @site.p8_name %>
-</p>
-
-<p>
-  <b>P9 name:</b>
-  <%= @site.p9_name %>
-</p>
-
-<p>
-  <b>P10 name:</b>
-  <%= @site.p10_name %>
-</p>
-
-<p>
-  <b>P11 name:</b>
-  <%= @site.p11_name %>
-</p>
-
-<p>
-  <b>P12 name:</b>
-  <%= @site.p12_name %>
-</p>
+<H3><%= @site.name %></H3>  
 
 
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
+<% @fields = @positions - %w{name photo photo2 photo3 doc comment} %>
+<table>
+  <caption><%= @site.name %></caption>
+  <tr>
+  <% @fields.each do |f| %>
+    <th><%= @site[f] %></th>  
+  <% end %>
+  </tr>
+
+  <% @records.each do |r| %>
+    <tr>
+      <% @fields.each do |f| %>
+        <td><%= r[f] %></td>  
+      <% end %>
+    </tr>
+  <% end %>
+</table>

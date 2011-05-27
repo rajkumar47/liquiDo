@@ -1,0 +1,121 @@
+header img {
+  padding: 10px;
+  background: #fff;
+}
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Big NewSite button */
+a.newsite_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 350px;
+	color: black;
+	background: #71a4ef;
+	font-size: 300%; 
+	font-style: italic;
+  font-family: Serif;
+	padding: 20px;
+}
+
+a.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* footer nav */
+footer {
+  text-align: center;
+  margin: auto;
+}
+
+footer nav {
+  float: none;
+}
+
+/* main page (pages) */
+div.search {
+  height: 200px;
+  text-align: center;  
+  margin: auto;
+}
+
+
+/* Error Explanations */
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: orange;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid orange;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: orange;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333; 
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.microposts {
+  font-size: 80%;
+}
+
+
+/* Blueprint overrides */
+textarea.blog {
+  width: 270px;
+}
+

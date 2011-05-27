@@ -22,5 +22,17 @@
 #
 
 class Site < ActiveRecord::Base
-  has_many  :records
+  has_many  :records, :dependent => :destroy
+
+  #--------
+  # methods
+  #
+  def positions 
+    @positions = []
+    attributes.each do | position, name |
+      @positions.push(position) if attribute_present?( position )  
+    end
+    @positions - %w{id created_at updated_at}
+  end
+
 end

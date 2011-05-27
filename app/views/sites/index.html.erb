@@ -1,47 +1,13 @@
-<h1>Listing sites</h1>
+<div class="span-4">
+  <h3>liquiDo Sites</h3>
+  <hr />
+  <ul>
+  <% @sites.each do |site| %>
+    <li><%= link_to site.name, site %></li>
+  <% end %>
+  </ul>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>P1 name</th>
-    <th>P2 name</th>
-    <th>P3 name</th>
-    <th>P4 name</th>
-    <th>P5 name</th>
-    <th>P6 name</th>
-    <th>P7 name</th>
-    <th>P8 name</th>
-    <th>P9 name</th>
-    <th>P10 name</th>
-    <th>P11 name</th>
-    <th>P12 name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sites.each do |site| %>
-  <tr>
-    <td><%= site.name %></td>
-    <td><%= site.p1_name %></td>
-    <td><%= site.p2_name %></td>
-    <td><%= site.p3_name %></td>
-    <td><%= site.p4_name %></td>
-    <td><%= site.p5_name %></td>
-    <td><%= site.p6_name %></td>
-    <td><%= site.p7_name %></td>
-    <td><%= site.p8_name %></td>
-    <td><%= site.p9_name %></td>
-    <td><%= site.p10_name %></td>
-    <td><%= site.p11_name %></td>
-    <td><%= site.p12_name %></td>
-    <td><%= link_to 'Show', site %></td>
-    <td><%= link_to 'Edit', edit_site_path(site) %></td>
-    <td><%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Site', new_site_path %>
+<div class="span-20 last">
+  <%= link_to 'Create New Site', new_site_path, :class => "newsite_button round" %>
+</div>
