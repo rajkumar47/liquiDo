@@ -1,0 +1,15 @@
+<div>
+  <h2 align="center"><%= @site.name %></h2>
+  <nav align="right">
+    <% doc       = @record.doc.url if @record.doc %>
+    <%= link_to 'flyer', doc,         :class => "quiet" %> |
+    <%= link_to 'back', record_path,  :class => "quiet" %>
+  </nav>
+  <%= image_tag @record.photo.url(:medium) %>
+  
+  <table>
+    <% @fields.each do |p| %>
+      <tr><td><b><%= @site[p] %>:</b></td><td><%= @record[p] %></td></tr>
+    <% end %>
+  </table>
+</div>

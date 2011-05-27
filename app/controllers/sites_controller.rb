@@ -10,6 +10,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @records = @site.records
     @positions = @site.positions
+    @fields = @site.fields
   end
 
   # 

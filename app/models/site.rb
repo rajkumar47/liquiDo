@@ -3,22 +3,22 @@
 #
 # Table name: sites
 #
-#  id           :integer         not null, primary key
-#  name         :string(255)
-#  i_name       :string(255)
-#  i2_name      :string(255)
-#  i3_name      :string(255)
-#  doc_name     :string(255)
-#  comment_name :string(255)
-#  p6_name      :string(255)
-#  p7_name      :string(255)
-#  p8_name      :string(255)
-#  p9_name      :string(255)
-#  p10_name     :string(255)
-#  p11_name     :string(255)
-#  p12_name     :string(255)
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  photo      :string(255)
+#  photo2     :string(255)
+#  photo3     :string(255)
+#  doc        :string(255)
+#  comment    :string(255)
+#  p6         :string(255)
+#  p7         :string(255)
+#  p8         :string(255)
+#  p9         :string(255)
+#  p10        :string(255)
+#  p11        :string(255)
+#  p12        :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class Site < ActiveRecord::Base
@@ -35,4 +35,7 @@ class Site < ActiveRecord::Base
     @positions - %w{id created_at updated_at}
   end
 
+  def fields
+    positions - %w{name photo photo2 photo3 doc comment} 
+  end
 end

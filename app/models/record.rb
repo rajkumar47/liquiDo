@@ -10,13 +10,13 @@
 #  photo3_file_name :string(255)
 #  doc_file_name    :string(255)
 #  comment          :text
-#  p6_val           :
-#  p7_val           :
-#  p8_val           :
-#  p9_val           :
-#  p10_val          :
-#  p11_val          :
-#  p12_val          :
+#  p6               :
+#  p7               :
+#  p8               :
+#  p9               :
+#  p10              :
+#  p11              :
+#  p12              :
 #  created_at       :datetime
 #  updated_at       :datetime
 #

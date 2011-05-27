@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<H3><%= @site.name %></H3>  
 
+<H3><%= @site.name %></H3>  
 
 <% @fields = @positions - %w{name photo photo2 photo3 doc comment} %>
 <table>
-  <caption><%= @site.name %></caption>
+  <caption><%= @site.name %> Found</caption>
   <tr>
   <% @fields.each do |f| %>
     <th><%= @site[f] %></th>  

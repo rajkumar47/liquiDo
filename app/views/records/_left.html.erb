@@ -1,0 +1,15 @@
+<div>
+  <h4 align="center">Images</h4>
+  
+  <% photo2 = image_tag @record.photo2.url(:small) %>
+  <%= photo2 %>
+  <p><b><%= @site.photo2 %></b>
+  
+  <hr />
+
+  <% photo3 = image_tag @record.photo3.url(:small) %>
+  <%= photo3 %>
+  <p><b><%= @site.photo3 %></b>
+
+</div>
+

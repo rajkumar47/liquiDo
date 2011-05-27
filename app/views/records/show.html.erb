@@ -1,70 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="span-24 colborder">
 
-<p>
-  <b>Site:</b>
-  <%= @record.site_id %>
-</p>
+  <div class="span-5 colborder">
+    <%= render 'left' %>
+  </div>
 
-<p>
-  <b>P1 val:</b>
-  <%= @record.p1_val %>
-</p>
+  <div class="span-10 colborder">
+    <%= render 'center' %>
+  </div>
 
-<p>
-  <b>P2 val:</b>
-  <%= @record.p2_val %>
-</p>
-
-<p>
-  <b>P3 val:</b>
-  <%= @record.p3_val %>
-</p>
-
-<p>
-  <b>P4 val:</b>
-  <%= @record.p4_val %>
-</p>
-
-<p>
-  <b>P5 val:</b>
-  <%= @record.p5_val %>
-</p>
-
-<p>
-  <b>P6 val:</b>
-  <%= @record.p6_val %>
-</p>
-
-<p>
-  <b>P7 val:</b>
-  <%= @record.p7_val %>
-</p>
-
-<p>
-  <b>P8 val:</b>
-  <%= @record.p8_val %>
-</p>
-
-<p>
-  <b>P9 val:</b>
-  <%= @record.p9_val %>
-</p>
-
-<p>
-  <b>P10 val:</b>
-  <%= @record.p10_val %>
-</p>
-
-<p>
-  <b>P11 val:</b>
-  <%= @record.p11_val %>
-</p>
-
-<p>
-  <b>P12 val:</b>
-  <%= @record.p12_val %>
-</p>
-
-
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+  <div class="span-7 last"> 
+    <%= render 'right' %>
+  </div>
+</div>
