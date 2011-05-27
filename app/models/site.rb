@@ -27,15 +27,29 @@ class Site < ActiveRecord::Base
   #--------
   # methods
   #
-  def positions 
-    @positions = []
-    attributes.each do | position, name |
-      @positions.push(position) if attribute_present?( position )  
-    end
-    @positions - %w{id created_at updated_at}
+  def used?(field)
+    self.attribute_names.include?( field )
   end
 
-  def fields
-    positions - %w{name photo photo2 photo3 doc comment} 
+  def used
+    @used = []
+    self.attribute_names().each do |at|
+      @used.push(at)  if self.attribute_present?(at) 
+    end
+    @used - %w{id created_at updated_at}
   end
+
+  def used_vars
+    used - %w{name photo photo2 photo3 doc comment}
+  end
+  def used_photos
+    used - %w{name doc comment p6 p7 p8 p9 p10 p11 p12}
+  end
+  def used_comments
+    used?("comment") ? %w{comment} : []
+  end
+  def used_docs
+    used?("doc") ? %w{doc} : []
+  end
+
 end

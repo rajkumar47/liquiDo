@@ -1,6 +1,9 @@
-<h1>Editing record</h1>
+<h2><%= 'Edit Info' %></h2>
+
+<nav align='right'>
+  <%= link_to 'Show', @record, :class => "quiet" %> |
+  <%= link_to 'Back', records_path, :class => "quiet" %>
+</nav>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @record %> |
-<%= link_to 'Back', records_path %>

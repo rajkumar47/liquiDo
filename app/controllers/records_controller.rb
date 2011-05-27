@@ -8,8 +8,8 @@ class RecordsController < ApplicationController
   def show
     @record = Record.find(params[:id])
     @site = @record.site
-    @positions  = @site.positions
-    @fields     = @site.fields
+    @positions  = @site.used
+    @fields     = @site.used_vars
   end
 
   # ----------------- 
@@ -21,11 +21,13 @@ class RecordsController < ApplicationController
   # --------------------- 
   def edit
     @record = Record.find(params[:id])
+    @site = @record.site
   end
 
   # ------------------- 
   def create
     @record = Record.new(params[:record])
+    @site = @record.site
 
     if @record.save
       redirect_to(@record, :notice => 'Record was successfully created.') 
@@ -37,6 +39,7 @@ class RecordsController < ApplicationController
   # ---------------- 
   def update
     @record = Record.find(params[:id])
+    @site = @record.site
 
     if @record.update_attributes(params[:record])
       redirect_to(@record, :notice => 'Record was successfully updated.') 

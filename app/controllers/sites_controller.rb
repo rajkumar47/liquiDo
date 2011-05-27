@@ -9,8 +9,8 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
     @records = @site.records
-    @positions = @site.positions
-    @fields = @site.fields
+    @positions = @site.used
+    @fields = @site.used_vars
   end
 
   # 
