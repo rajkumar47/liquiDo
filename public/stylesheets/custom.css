@@ -37,24 +37,14 @@ a.round {
 	border-radius: 10px;
 }
 
-/* footer nav */
-footer {
-  text-align: center;
+
+/* forms */
+input.search {
+  width: 100px;
   margin: auto;
 }
 
-footer nav {
-  float: none;
-}
-
-/* main page (pages) */
-div.search {
-  height: 200px;
-  text-align: center;  
-  margin: auto;
-}
-
-
+/* -------------------------------------------------------------- */
 /* Error Explanations */
 .field_with_errors {
   margin-top: 10px;
@@ -97,25 +87,4 @@ div.search {
   list-style: square;
 }
 
-div.user_info img {
-  padding-right: 0.1em;
-}
-
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-  position: absolute;
-}
-
-div.user_info span.microposts {
-  font-size: 80%;
-}
-
-
-/* Blueprint overrides */
-textarea.blog {
-  width: 270px;
-}
 

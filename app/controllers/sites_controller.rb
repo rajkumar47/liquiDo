@@ -8,9 +8,8 @@ class SitesController < ApplicationController
   # 
   def show
     @site = Site.find(params[:id])
-    @records = @site.records
-    @positions = @site.used
-    @fields = @site.used_vars
+    @records = @site.search( params ) 
+    flash[:notice] = "No matched entries were found!" if @records.length < 1
   end
 
   # 

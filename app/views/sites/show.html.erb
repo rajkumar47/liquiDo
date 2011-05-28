@@ -1,22 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-
 <H3><%= @site.name %></H3>  
 
-<% @fields = @positions - %w{name photo photo2 photo3 doc comment} %>
+<!-- Search Form -->
 <table>
-  <caption><%= @site.name %> Found</caption>
+  <caption><%= @site.name %></caption>
   <tr>
-  <% @fields.each do |f| %>
-    <th><%= @site[f] %></th>  
-  <% end %>
+    <th></th>
+    <% @site.used_vars.each do |at| %>
+      <th><%= @site[at] %></th>  
+    <% end %>
   </tr>
+  <%= form_tag site_path(@site), :method => 'get' do %>
+    <tr>
+      <td><%= submit_tag "Search", :name => nil %></td>
+      <% @site.used_vars.each do |at| %>
+        <td><%= text_field_tag at, nil, :class => "search",
+          :placeholder => "Enter #{@site[at]}" %></td>  
+      <% end %>
+    </tr>
+  <% end %>
 
+  <!-- Search Results -->
+  <% @count = 1 %>
   <% @records.each do |r| %>
     <tr>
-      <% @fields.each do |f| %>
-        <td><%= r[f] %></td>  
+      <td><%= @count %></td>
+      <% @site.used_vars.each do |f| %>
+        <td><%= r[f] %></td> 
       <% end %>
+      <% @count += 1 %>
     </tr>
   <% end %>
 </table>

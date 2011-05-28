@@ -1,10 +1,10 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(object.errors.count, "t('error.msg')") %>
-      :: <%= t 'error.nosave' %>
+    <h2><%= pluralize(object.errors.count, 'Error')") %>
+      :: <%= 'Not Saved' %>
       <%= object.class.to_s.underscore.humanize.downcase %>
     </h2>
-    <p><%= t ('error.field') %></p>
+    <p><%= "Error: " %></p>
       <ul>
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

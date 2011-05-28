@@ -52,4 +52,20 @@ class Site < ActiveRecord::Base
     used?("doc") ? %w{doc} : []
   end
 
+  #----------------
+  # very Ugly. Replace when you have time
+  def search( params )
+    # we need the records associated with this site_id
+    s_params = {:site_id => params[:id]}
+    s_string = "site_id = :site_id "
+    # for each search field, add where clause (pad with % for substring match)
+    used_vars.each do |at|
+      if params[at] && !params[ at ].empty?
+        s_string += " AND #{at} LIKE :#{at} "
+        s_params[ :"#{at}" ] = "%#{params[ at ]}%"
+      end
+    end
+    Record.all( :conditions => [s_string, s_params] )
+  end
+
 end
