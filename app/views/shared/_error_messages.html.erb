@@ -1,6 +1,6 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(object.errors.count, 'Error')") %>
+    <h2><%= pluralize(object.errors.count, 'Error') %>
       :: <%= 'Not Saved' %>
       <%= object.class.to_s.underscore.humanize.downcase %>
     </h2>

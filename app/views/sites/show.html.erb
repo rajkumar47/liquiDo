@@ -1,4 +1,10 @@
 <H3><%= @site.name %></H3>  
+<!-- Add nav bar -->
+<nav align="right">
+  <%= link_to "Add Entry", { :controller => "records", :action => "new", 
+    :site_id => @site}, :class => "quiet" %>
+   
+</nav>
 
 <!-- Search Form -->
 <table>
@@ -19,13 +25,14 @@
     </tr>
   <% end %>
 
+
   <!-- Search Results -->
   <% @count = 1 %>
   <% @records.each do |r| %>
     <tr>
       <td><%= @count %></td>
       <% @site.used_vars.each do |f| %>
-        <td><%= r[f] %></td> 
+        <td><%= link_to r[f], r, :class => "quiet" %></td> 
       <% end %>
       <% @count += 1 %>
     </tr>

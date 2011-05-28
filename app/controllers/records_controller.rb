@@ -14,8 +14,8 @@ class RecordsController < ApplicationController
 
   # ----------------- 
   def new
-    @record = Record.new
-
+    @site = Site.find( params[:site_id] )
+    @record = @site.records.new
   end
 
   # --------------------- 
@@ -26,8 +26,8 @@ class RecordsController < ApplicationController
 
   # ------------------- 
   def create
-    @record = Record.new(params[:record])
-    @site = @record.site
+    @site = Site.find( params[:record][:site_id] )
+    @record = @site.records.build(params[:record])
 
     if @record.save
       redirect_to(@record, :notice => 'Record was successfully created.') 
