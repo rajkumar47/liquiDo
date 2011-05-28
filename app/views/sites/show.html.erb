@@ -30,7 +30,7 @@
   <% @count = 1 %>
   <% @records.each do |r| %>
     <tr>
-      <td><%= @count %></td>
+      <td><%= link_to @count, r, :class => "quiet" %></td>
       <% @site.used_vars.each do |f| %>
         <td><%= link_to r[f], r, :class => "quiet" %></td> 
       <% end %>
