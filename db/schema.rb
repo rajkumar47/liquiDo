@@ -12,8 +12,25 @@
 
 ActiveRecord::Schema.define(:version => 20110526005133) do
 
-# Could not dump table "records" because of following StandardError
-#   Unknown type 'none' for column 'p6'
+  create_table "records", :force => true do |t|
+    t.integer  "site_id",          :null => false
+    t.string   "photo_file_name"
+    t.string   "photo2_file_name"
+    t.string   "photo3_file_name"
+    t.string   "doc_file_name"
+    t.text     "comment"
+    t.string   "p6"
+    t.string   "p7"
+    t.string   "p8"
+    t.string   "p9"
+    t.string   "p10"
+    t.string   "p11"
+    t.string   "p12"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "records", ["site_id"], :name => "index_records_on_site_id"
 
   create_table "sites", :force => true do |t|
     t.string   "name"

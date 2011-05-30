@@ -1,7 +1,7 @@
 <%= form_for(@site) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.hidden_field :name,   :class => "required", :value => "" %>
+    <%= f.hidden_field :name,   :class => "required", :value => "Temp" %>
     <%= f.hidden_field :photo,  :class => "images",   :value => "unused" %>
     <%= f.hidden_field :photo2, :class => "images",   :value => "unused" %>
     <%= f.hidden_field :photo3, :class => "images",   :value => "unused" %>
