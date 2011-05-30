@@ -19,7 +19,8 @@ namespace :db do
                           :p8       => "Date",
                           :p9       => "Time",
                           :p10      => "Price",
-                          :p12      => "Regular Event"
+                          :p11      => "unused",
+                          :p12      => "Repeating Event?"
                           )
 
     site1.records.create!(  :photo_file_name  => "se1_pic1.jpg", 
@@ -29,16 +30,16 @@ namespace :db do
                             :comment          => "Loved it last month!",
                             :p6             => "Outdoor Music",
                             :p7             => "South Street Seaport",
-                            :p8             => "June 11",
+                            :p8             => "Sat, June 11",
                             :p9             => "7 PM",
                             :p10            => "Free",
                             :p12            => "Monthly"
                           )
     
-    @no_records = (1..10).to_a.shuffle.first
+    @no_records = (4..10).to_a.shuffle.first
     @no_records.times do |n| 
       @days_ahead = (1..100).to_a.shuffle.first
-      date = Date.today + @days_ahead
+      date = (Date.today + @days_ahead).strftime("%a, %b %d")
       @seconds_ahead = (1..24).to_a.shuffle.first * 3600
       time = (Time.now + @seconds_ahead).strftime( "%I %M %p")
 

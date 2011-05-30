@@ -19,7 +19,7 @@
     <tr>
       <td><%= submit_tag "Search", :name => nil %></td>
       <% @site.used_vars.each do |at| %>
-        <td><%= text_field_tag at, nil, :class => "search",
+        <td><%= text_field_tag at, nil, :class => "tfield",
           :placeholder => "Enter #{@site[at]}" %></td>  
       <% end %>
     </tr>

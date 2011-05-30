@@ -16,27 +16,25 @@ class SitesController < ApplicationController
   def new
     @site = Site.new
   end
-
-  # 
-  def edit
-    @site = Site.find(params[:id])
-  end
-
   # 
   def create
     @site = Site.new(params[:site])
     if @site.save
-      redirect_to(@site, :notice => 'Site was successfully created.') 
+      redirect_to(edit_site_path( @site )) 
     else
       render :action => "new" 
     end
   end
-
+  
+  # 
+  def edit
+    @site = Site.find(params[:id])
+  end
   # 
   def update
     @site = Site.find(params[:id])
     if @site.update_attributes(params[:site])
-      redirect_to(@site, :notice => 'Site was successfully updated.') 
+      redirect_to(root_path, :notice => 'Site was successfully updated.') 
     else
       render :action => "edit"
     end

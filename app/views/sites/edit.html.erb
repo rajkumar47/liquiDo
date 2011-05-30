@@ -1,6 +1,61 @@
-<h1>Editing site</h1>
+<%= form_for @site do |f| %>
+  <div class="field span-24 colborder">
+    <%= render 'shared/error_messages', :object => f.object %>
+    <h2 align="center">Name your site-elements</h2>
+    <hr />
 
-<%= render 'form' %>
+    <!-- Icons --!>
+    <div class="span-6 colborder">
+      <h4 align="center">Images</h4>
+      <% if @site.used? :photo2 %>
+        <div class="droppable icons">An icon will appear here </div>
+        <p><b>Thumbnail 1 title: </b><%= f.text_field :photo2,:class => "tfield" %>
+        <hr />
+      <% end %>
+      <% if @site.used? :photo3 %>
+        <div class="droppable icons">An icon will appear here </div>
+        <p><b>Thumbnail 2 title: </b><%= f.text_field :photo3,:class => "tfield" %>
+      <% end %>
+    </div>
 
-<%= link_to 'Show', @site %> |
-<%= link_to 'Back', sites_path %>
+    <!-- Center --!>
+    <div class="span-10 colborder">
+      <h3 align="center"><b>Site Name: </b><%= f.text_field :name, 
+        :class => "tfield" %></h3>
+      <% if @site.used? :photo %>
+        <div class="droppable images">An image will appear here </div>
+        <h5 align="center"><b>Image title: </b><%= f.text_field :photo,
+          :class =>"tfield" %></h5>
+      <% end %>
+      <hr />
+      <% if @site.used? :doc %>
+        <nav align="right">
+          <p><b>Flyer title: </b><%= f.text_field :doc, :class => "tfield" %>
+        </nav>
+      <hr />
+      <% end %>
+      <table>
+        <% @site.used_vars.each do |at| %>
+          <% if @site.used? at %>
+            <tr><td><b><%= @site[at] %> title: </b></td>
+              <td><%= f.text_field at, :class => "tfield" %></td></tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+
+    <!-- Comments --!>
+    <div class="span-6 last">
+      <% if @site.used? :comment %>
+        <p><b>Textbox Title: </b><%= f.text_field :comment, :class => 'tfield' %>
+      <% end %>
+    </div>
+  </div> <!-- class field -->
+
+  <hr />
+  <div class="actions" align="center">
+    <%= f.submit 'Update' %><br />
+  </div>
+  <br />
+  <hr />
+<% end %>

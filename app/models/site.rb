@@ -23,18 +23,20 @@
 
 class Site < ActiveRecord::Base
   has_many  :records, :dependent => :destroy
-
+  
+  validates :name,  :presence  => true,
+                    :length     => { :within => 4..64 }
   #--------
   # methods
   #
   def used?(field)
-    self.attribute_names.include?( field )
+    self[field] != "unused"  
   end
 
   def used
     @used = []
     self.attribute_names().each do |at|
-      @used.push(at)  if self.attribute_present?(at) 
+      @used.push(at)  if self[at] != "unused"
     end
     @used - %w{id created_at updated_at}
   end

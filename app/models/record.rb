@@ -31,7 +31,6 @@ class Record < ActiveRecord::Base
   has_attached_file :photo,
     :styles => {
       :thumb => "60x48#",
-      :small => "150x120",
       :medium => "400x320>"
      },
      :url => "/images/photos/:basename.:style.:extension",

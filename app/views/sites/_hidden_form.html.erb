@@ -1,0 +1,21 @@
+<%= form_for(@site) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.hidden_field :name,   :class => "required", :value => "" %>
+    <%= f.hidden_field :photo,  :class => "images",   :value => "unused" %>
+    <%= f.hidden_field :photo2, :class => "images",   :value => "unused" %>
+    <%= f.hidden_field :photo3, :class => "images",   :value => "unused" %>
+    <%= f.hidden_field :doc,    :class => "docs",     :value => "unused" %>
+    <%= f.hidden_field :comment,:class => "comments", :value => "unused" %>
+    <%= f.hidden_field :p6,     :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p7,     :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p8,     :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p9,     :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p10,    :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p11,    :class => "data",     :value => "unused" %>
+    <%= f.hidden_field :p12,    :class => "data",     :value => "unused" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save Layout'%>
+  </div>
+<% end %>
