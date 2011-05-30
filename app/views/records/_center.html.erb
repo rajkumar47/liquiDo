@@ -2,10 +2,14 @@
   <h2 align="center"><%= @site.name %></h2>
   <nav align="right">
     <% doc       = @record.doc.url if @record.doc %>
-    <%= link_to 'flyer', doc,         :class => "quiet" %> |
+    <% if @site.used? :doc %>
+      <%= link_to 'flyer', doc,         :class => "quiet" %> |
+    <% end %>
     <%= link_to 'back', @record.site,  :class => "quiet" %>
   </nav>
-  <%= image_tag @record.photo.url(:medium) %>
+  <% if @site.used? :photo %>
+    <%= image_tag @record.photo.url(:medium) %>
+  <% end %>
   
   <table>
     <% @fields.each do |p| %>

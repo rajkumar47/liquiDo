@@ -1,4 +1,6 @@
 <div>
+  <% if @site.used? :comment %>
     <h5 align="center"><%= @site.comment %></h5>
     <%= @record.comment %>
+  <% end %>
 </div>
