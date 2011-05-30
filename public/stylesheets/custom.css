@@ -1,3 +1,114 @@
+/* drag and drops */
+
+.draggable {
+  padding:0.5em;
+  margin-bottom:1em;
+  border:2px solid #ddd;
+}
+.droppable {
+  padding:5em;
+  margin-bottom:5em;
+  border:2px solid #ddd;
+}
+#icon1 {
+  padding-top: 7em;
+  padding-bottom: 8em;
+}
+#icon2 {
+  padding-top: 7em;
+  padding-bottom: 8em;
+}
+#image {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  margin-bottom:1em;
+}
+#doc {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom:1em;
+}
+#info {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-bottom:1em;
+}
+#comment {
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+
+.docs {
+  background:#fbe3e4;
+  color:#8a1f11;
+  border-color:#fbc2c4;
+}
+.docs a {
+  color:#8a1f11;
+}
+
+.images {
+  background:#fff6bf;
+  color:#514721;
+  border-color:#ffd324;
+}
+.images a {
+  color:#514721;
+}
+
+.icons {
+  background:#e6efc2;
+  color:#264409;
+  border-color:#c6d880;
+}
+.icons a {
+  color:#264409;
+}
+
+.data {
+  background:#d5edf8;
+  color:#205791;
+  border-color:#92cae4;
+}
+.data a {
+  color:#205791;
+}
+
+.comments {
+  background:#e6edf8;
+  color:#315791;
+  border-color:#a3cae4;
+}
+.comments a {
+  color:#315791;
+}
+
+/* ------------------------------ */
+/* Big NewSite button */
+a.site_button {
+  padding: 1em;
+  margin-bottom: 1em;
+  border:2px solid #ddd;
+  align: center;
+	display: block;
+	text-align: center;
+	width: 300px;
+	color: #415791;
+  border-color: #b3cae4;
+	background: #e6edf8;
+	font-size: 200%; 
+	font-style: italic;
+  font-family: Serif;
+}
+
+a.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+
+/* -------------------------- */
 header img {
   padding: 10px;
   background: #fff;
@@ -14,27 +125,6 @@ nav ul {
 nav ul li {
   display: inline-block;
   text-decoration: none;
-}
-
-/* Big NewSite button */
-a.newsite_button {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	text-align: center;
-	width: 350px;
-	color: black;
-	background: #71a4ef;
-	font-size: 300%; 
-	font-style: italic;
-  font-family: Serif;
-	padding: 20px;
-}
-
-a.round {
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
 }
 
 
