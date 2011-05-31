@@ -95,21 +95,21 @@ namespace :db do
                             :p7             => "Jaguar",
                             :p8             => "2-door",
                             :p9             => "1961",
-                            :p10            => "-",
+                            :p10            => "unknown",
                             :p12            => "No"
                           )
     
-    @no_records = (4..10).to_a.shuffle.first
+    @no_records = (10..15).to_a.shuffle.first
     @no_records.times do |n| 
-      photo_file_name   = "c1_pic1.jpg"
-      photo2_file_name  = "c1_pic2.jpg"
-      photo3_file_name  = "c1_pic3.jpg"
       doc_file_name     = "c1_flyer.pdf"   
       comment           = Faker::Lorem.sentence
-      p6        = %w{E-Type XJ-6 Boxter Phantom Silver-Cloud}.shuffle.first 
-      p7        = %w{Jaguar Porche Bentley Lamborghini}.shuffle.first 
+      p6        = %w{E-Type XJ-6 A-11 Phantom Cloud ES-21 P-1 F-1}.shuffle.first 
+      p7        = %w{Jaguar Mercedes AstonMartin Ferrari Lamborghini Bugatti Chevy Mclaren}.shuffle.first 
+      photo_file_name   = p7 + "1.jpg"
+      photo2_file_name  = p7 + "2.jpg"
+      photo3_file_name  = p7 + "3.jpg"
       p8        = %w{coupes hatchback sedan 2-door gull-wing}.shuffle.first 
-      p9        = %w{1963 2000 1989 1999 2001 1975 1985 1988 2010}.shuffle.first 
+      p9        = %w{1938 2000 1989 1999 2001 1975 1985 1988 2010}.shuffle.first 
       p10       = %w{NA $30K $70K $120K varies unknown }.shuffle.first 
       p12       = %w{Yes No No No Limited}.shuffle.first 
 
