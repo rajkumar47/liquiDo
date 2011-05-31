@@ -2,7 +2,7 @@
 
 <nav align='right'>
   <%= link_to 'Show', @record, :class => "quiet" %> |
-  <%= link_to 'Back', records_path, :class => "quiet" %>
+  <%= link_to @site.name, @site, :class => "quiet" %>
 </nav>
 
 <%= render 'form' %>

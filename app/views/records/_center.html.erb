@@ -5,7 +5,7 @@
     <% if @site.used? :doc %>
       <%= link_to 'flyer', doc,         :class => "quiet" %> |
     <% end %>
-    <%= link_to 'back', @record.site,  :class => "quiet" %>
+    <%= link_to @site.name, @site,  :class => "quiet" %>
   </nav>
   <% if @site.used? :photo %>
     <%= image_tag @record.photo.url(:medium) %>
