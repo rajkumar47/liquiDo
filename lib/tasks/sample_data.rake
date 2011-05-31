@@ -43,12 +43,12 @@ namespace :db do
       @seconds_ahead = (1..24).to_a.shuffle.first * 3600
       time = (Time.now + @seconds_ahead).strftime( "%I %M %p")
 
-      photo_file_name   = "se1_pic1.jpg"
-      photo2_file_name  = "se1_pic2.jpg"
-      photo3_file_name  = "se1_pic3.jpg"
       doc_file_name     = "se1_flyer.pdf"   
       comment           = Faker::Lorem.sentence
-      p6        = %w{Music Dance Concert Movie Party}.shuffle.first 
+      p6        = %w{Music Dance Concert Movie}.shuffle.first 
+      photo_file_name   = p6 + "1.jpg"
+      photo2_file_name  = p6 + "2.jpg"
+      photo3_file_name  = p6 + "3.jpg"
       p7        = Faker::Address.street_name
       p8        = date 
       p9        = time 
@@ -86,9 +86,9 @@ namespace :db do
                           :p12      => "In Production?"
                           )
 
-    site2.records.create!(  :photo_file_name  => "c1_pic1.jpg", 
-                            :photo2_file_name => "c1_pic2.jpg", 
-                            :photo3_file_name => "c1_pic3.jpg", 
+    site2.records.create!(  :photo_file_name  => "Jaguar1.jpg", 
+                            :photo2_file_name => "Jaguar2.jpg", 
+                            :photo3_file_name => "Jaguar3.jpg", 
                             :doc_file_name    => "c1_flyer.pdf",
                             :comment          => "Loved the ride",
                             :p6             => "E-Type",
