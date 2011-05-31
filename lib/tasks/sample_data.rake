@@ -3,7 +3,7 @@ require 'faker'
 namespace :db do
   desc "Fill site table with sample data"
   task :populate => :environment do
-    # Rake::Task['db:reset'].invoke
+    Rake::Task['db:reset'].invoke
 
     #------------------
     
@@ -68,6 +68,65 @@ namespace :db do
                             :p12          => p12
                           )
     end   # times
+
+    # ------------------------------------------------------
+    # Site2: Sports Cars
+    site2 = Site.create!( :name      => "Sports Cars",
+                          :photo    => "Picture",
+                          :photo2   => "Another view",
+                          :photo3   => "Third Image",
+                          :doc      => "Flyer",
+                          :comment  => "Comments",
+                          :p6       => "Model Name",
+                          :p7       => "Maker",
+                          :p8       => "Type",
+                          :p9       => "First Year",
+                          :p10      => "Base Price",
+                          :p11      => "unused",
+                          :p12      => "In Production?"
+                          )
+
+    site2.records.create!(  :photo_file_name  => "c1_pic1.jpg", 
+                            :photo2_file_name => "c1_pic2.jpg", 
+                            :photo3_file_name => "c1_pic3.jpg", 
+                            :doc_file_name    => "c1_flyer.pdf",
+                            :comment          => "Loved the ride",
+                            :p6             => "E-Type",
+                            :p7             => "Jaguar",
+                            :p8             => "2-door",
+                            :p9             => "1961",
+                            :p10            => "-",
+                            :p12            => "No"
+                          )
+    
+    @no_records = (4..10).to_a.shuffle.first
+    @no_records.times do |n| 
+      photo_file_name   = "c1_pic1.jpg"
+      photo2_file_name  = "c1_pic2.jpg"
+      photo3_file_name  = "c1_pic3.jpg"
+      doc_file_name     = "c1_flyer.pdf"   
+      comment           = Faker::Lorem.sentence
+      p6        = %w{E-Type XJ-6 Boxter Phantom Silver-Cloud}.shuffle.first 
+      p7        = %w{Jaguar Porche Bentley Lamborghini}.shuffle.first 
+      p8        = %w{coupes hatchback sedan 2-door gull-wing}.shuffle.first 
+      p9        = %w{1963 2000 1989 1999 2001 1975 1985 1988 2010}.shuffle.first 
+      p10       = %w{NA $30K $70K $120K varies unknown }.shuffle.first 
+      p12       = %w{Yes No No No Limited}.shuffle.first 
+
+      site2.records.create!(:photo_file_name  => photo_file_name, 
+                            :photo2_file_name => photo2_file_name, 
+                            :photo3_file_name => photo3_file_name, 
+                            :doc_file_name    => doc_file_name,
+                            :comment          => comment,
+                            :p6           => p6,
+                            :p7           => p7,
+                            :p8           => p8,
+                            :p9           => p9,
+                            :p10          => p10,
+                            :p12          => p12
+                          )
+    end   # times
+
 
   end   # task
 end   # namespace
