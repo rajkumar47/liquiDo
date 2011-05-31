@@ -30,7 +30,7 @@ class RecordsController < ApplicationController
     @record = @site.records.build(params[:record])
 
     if @record.save
-      redirect_to(@record, :notice => 'Record was successfully created.') 
+      redirect_to(@site, :notice => 'Record was successfully created.') 
     else
       render :action => "new" 
     end
